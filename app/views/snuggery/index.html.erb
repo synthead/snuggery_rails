@@ -1,0 +1,7 @@
+<div class="delta-button" data-delta="1">▲</div>
+
+<%= form_for(@thermostat, remote: true) do |form| %>
+  <%= form.text_field(:temperature) %>
+<% end %>
+
+<div class="delta-button" data-delta="-1">▼</div>
