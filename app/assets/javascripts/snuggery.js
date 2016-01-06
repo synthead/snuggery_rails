@@ -18,13 +18,16 @@ Thermostat.prototype.submitTemperature = function(temperature) {
 }
 
 $(function() {
+  var temperatureForm = $(".edit_thermostat");
+  var temperatureInput = temperatureForm.find("input[type='text']");
+
   new Thermostat(
       $(".delta-button"),
-      $(".edit_thermostat"),
-      $(".edit_thermostat input[type='text']")
+      temperatureForm,
+      temperatureInput
   );
 
-  $(".edit_thermostat").on("ajax:complete", function(event) {
-    $(event.target).find("input[type='text']").blur();
+  temperatureForm.on("ajax:complete", function() {
+    temperatureInput.blur();
   });
 });
