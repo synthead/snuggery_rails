@@ -1,5 +1,5 @@
 class SnuggeryController < ApplicationController
   def index
-    @thermostat = (Thermostat.first or Thermostat.create)
+    @thermostat = Thermostat.first
   end
 end
